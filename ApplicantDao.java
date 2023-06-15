@@ -372,6 +372,81 @@ public class ApplicantDao {
 	}
 	
 	
+	public List<Applicant> getApplicationByApprovalStatus(String approvalStatus) throws SQLException {
+		List<Applicant> statusList = new ArrayList<>();
+		String selectQuery = "SELECT * FROM app.space_booking WHERE approval_status = ?";
+		try {
+
+			connection = new DbConnection().getConnection();
+			preparedStatement = connection.prepareStatement(selectQuery);
+			preparedStatement.setString(1, approvalStatus);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Applicant ap = new Applicant();
+				ap.setApplicationNumber(resultSet.getString("application_number"));
+				ap.setName(resultSet.getString("name"));
+				ap.setAddress(resultSet.getString("address"));
+				ap.setNricNumber(resultSet.getString("nric_number"));
+				ap.setHomePhoneNumber(resultSet.getString("home_ph_no"));
+				ap.setOfficePhoneNumber(resultSet.getString("office_ph_no"));
+				ap.setHandPhoneNumber(resultSet.getString("hand_ph_no"));
+				ap.setEmail(resultSet.getString("email"));
+				ap.setTotalAmount(resultSet.getDouble("total_amount"));
+				ap.setBookingDate(resultSet.getString("booking_date"));
+				ap.setL1s1(resultSet.getString("L1s1"));
+				ap.setL1s2(resultSet.getString("L1s2"));
+				ap.setL1s3(resultSet.getString("L1s3"));
+				ap.setL1s4(resultSet.getString("L1s4"));
+				ap.setL1s5(resultSet.getString("L1s5"));
+				ap.setL1s6(resultSet.getString("L1s6"));
+				ap.setL1s7(resultSet.getString("L1s7"));
+				ap.setL1s8(resultSet.getString("L1s8"));
+				ap.setL1s9(resultSet.getString("L1s9"));
+				ap.setL1s10(resultSet.getString("L1s10"));
+				ap.setL1s11(resultSet.getString("L1s11"));
+				ap.setL1s12(resultSet.getString("L1s12"));
+				ap.setL1s13(resultSet.getString("L1s13"));
+				ap.setL1s14(resultSet.getString("L1s14"));
+				ap.setL1s15(resultSet.getString("L1s15"));
+				ap.setL1s16(resultSet.getString("L1s16"));
+				ap.setL1s17(resultSet.getString("L1s17"));
+				ap.setL1s18(resultSet.getString("L1s18"));
+				ap.setL1s19(resultSet.getString("L1s19"));
+				ap.setL1s20(resultSet.getString("L1s20"));
+				ap.setL2s1(resultSet.getString("L2s1"));
+				ap.setL2s2(resultSet.getString("L2s2"));
+				ap.setL2s3(resultSet.getString("L2s3"));
+				ap.setL2s4(resultSet.getString("L2s4"));
+				ap.setL2s5(resultSet.getString("L2s5"));
+				ap.setL2s6(resultSet.getString("L2s6"));
+				ap.setL2s7(resultSet.getString("L2s7"));
+				ap.setL2s8(resultSet.getString("L2s8"));
+				ap.setL2s9(resultSet.getString("L2s9"));
+				ap.setL2s10(resultSet.getString("L2s10"));
+				ap.setNoOfDaysBooked(resultSet.getString("no_of_days_booked"));
+				ap.setApprovalStatus(resultSet.getString("approval_status"));
+				ap.setOicComment(resultSet.getString("oic_comment"));
+				ap.setOicFollowUpdateTime(resultSet.getString("oic_followup_date_time"));
+				ap.setCreatedDate(resultSet.getString("created_date"));
+				ap.setCreatedDateTime(resultSet.getString("created_date_time"));
+				statusList.add(ap);
+			}
+		}catch (SQLException e) {
+			printSQLException(e);
+		} finally {
+			try {
+				connection.close();
+				preparedStatement.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return statusList;
+	}
+	
+	
 //	public boolean updateApplication(Applicant applicant) throws SQLException {
 //        String sql = "UPDATE app.space_booking SET approval_status = ?";
 //        sql += " WHERE application_number = ?";
