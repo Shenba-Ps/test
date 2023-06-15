@@ -27,7 +27,7 @@
 								<label>Name</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idName">
+								<input class="form-control" type="text" id="idName" name="nmName">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -35,7 +35,7 @@
 								<label>Address</label>
 							</div>
 							<div class="col-xs-6">
-								<textarea class="form-control" id="idAddress"></textarea>
+								<textarea class="form-control" id="idAddress" name="nmAddress"></textarea>
 							</div>
 						</div>
 						<div class="row form-group">
@@ -43,7 +43,7 @@
 								<label>NRIC</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idNRIC">
+								<input class="form-control" type="text" id="idNRIC" name="nmNRIC">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -66,7 +66,7 @@
 								<label>Others</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idOthers">
+								<input class="form-control" type="text" id="idOthers" name="nmOthers">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -74,7 +74,7 @@
 								<label>Email</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idEmail">
+								<input class="form-control" type="text" id="idEmail" name="nmEmail">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -82,7 +82,7 @@
 								<label>Home</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idHomeTel">
+								<input class="form-control" type="text" id="idHomeTel" name="nmHome">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -90,7 +90,7 @@
 								<label>Office</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idOfficeTel">
+								<input class="form-control" type="text" id="idOfficeTel" name="nmOffice">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -98,7 +98,7 @@
 								<label>Mobile</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="text" id="idMobile">
+								<input class="form-control" type="text" id="idMobile" name="nmMobile">
 							</div>
 						</div>
 						<div class="row form-group">
@@ -106,7 +106,7 @@
 								<label>Booking Date</label>
 							</div>
 							<div class="col-xs-6">
-								<input class="form-control" type="date" id="idBookingDate">
+								<input class="form-control" type="date" id="idBookingDate" name="nmBookingDate">
 							</div>
 						</div>
 					</div>
