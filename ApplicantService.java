@@ -27,7 +27,9 @@ public class ApplicantService {
 		long count = applicantDao.getCount();
 		long countVar = count + 1;
 		String appNumber = "Space"+"-"+CreatedDate+"-"+countVar;
+		String appStatus = "In-Progress";
 		applicantObj.setApplicationNumber(appNumber);
+		applicantObj.setApprovalStatus(appStatus);
 		
 		applicantDao.saveBooking(applicantObj,CreatedDate,timesatmpObj);
 		
